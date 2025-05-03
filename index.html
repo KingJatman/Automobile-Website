@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Ensures proper scaling on mobile devices -->
     <title>AutoDrive | Your Journey Starts Here</title>
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -11,7 +11,15 @@
       <div class="logo">
         <h2>AutoDrive</h2>
       </div>
-      <nav>
+      <div class="nav-toggle">
+        <!-- Hamburger menu for mobile view -->
+        <span></span> <!-- Line 1 of the hamburger -->
+        <span></span> <!-- Line 2 of the hamburger -->
+        <span></span> <!-- Line 3 of the hamburger -->
+      </div>
+      <nav class="nav-menu">
+        <!-- Navigation links -->
+        <a href="index.html">Home</a>
         <a href="model.html">Models</a>
         <a href="#features">Features</a>
         <a href="contact.html">Contact</a>
@@ -48,5 +56,6 @@
       <p>Contact us: info@autodrive.com | +1 234 567 8900</p>
       <p>&copy; 2025 AutoDrive. All rights reserved.</p>
     </footer>
+    <script src="script.js"></script> <!-- Links the JavaScript file for functionality -->
   </body>
 </html>
