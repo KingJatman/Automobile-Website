@@ -11,13 +11,72 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky; /* Makes the header stick to the top of the viewport */
+    top: 0; /* Ensures the header stays at the top */
+    z-index: 1000; /* Ensures the header appears above other elements */
 }
 
-nav a {
-    color: #fff;
-    margin: 0 1rem;
-    text-decoration: none;
-    font-weight: bold;
+.nav-toggle {
+    display: none; /* Initially hides the hamburger menu */
+    flex-direction: column; /* Stacks the hamburger lines vertically */
+    cursor: pointer; /* Changes the cursor to a pointer for better UX */
+    position: relative; /* Allows for absolute positioning of the lines */      
+    top: 0rem; /* Aligns it vertically within the header */
+    right: 0rem; /* Aligns it to the right side of the header */
+    z-index: 10; /* Ensures it appears above other elements */
+}
+
+.nav-toggle span {
+    background: #fff; /* Sets the color of the hamburger lines */
+    height: 3px; /* Thickness of each line */
+    width: 25px; /* Width of each line */
+    margin: 4px 0; /* Spacing between the lines */
+    transition: 0.3s; /* Smooth transition for animations */
+}
+
+.nav-menu {
+    display: flex; /* Displays the navigation links in a row by default */
+    flex-direction: row; /* Aligns links horizontally for large screens */
+    align-items: center; /* Centers the links vertically */
+}
+
+.nav-menu a {
+    color: #fff; /* Sets the color of the links */
+    margin: 0 1rem; /* Adds spacing between links */
+    text-decoration: none; /* Removes underline from links */
+    font-weight: bold; /* Makes the links bold */
+}
+
+.nav-menu a.active {
+    color: #e63946; /* Highlights the active link with a different color */
+    font-weight: bold; /* Makes the active link bold */
+    border-bottom: 2px solid #e63946; /* Adds an underline to the active link */
+}
+
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: flex; /* Makes the hamburger menu visible on smaller screens */
+    }
+
+    .nav-menu {
+        display: none; /* Hides the navigation menu by default */
+        flex-direction: column; /* Stacks the nav links vertically */
+        background-color: #111; /* Matches the header background */
+        position: absolute; /* Positions the nav menu below the header */
+        top: 100%; /* Places the nav menu just below the header */
+        left: 0; /* Aligns the nav menu to the left edge */
+        width: 100%; /* Makes the nav menu span the full width */
+        padding: 1rem 0; /* Adds padding for better spacing */
+    }
+
+    .nav-menu.active {
+        display: flex; /* Displays the nav menu when active */
+    }
+
+    .nav-menu a {
+        margin: 1rem 0; /* Adds spacing between nav links */
+        text-align: center; /* Centers the nav links */
+    }
 }
 
 .hero {
